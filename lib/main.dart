@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'models/people.dart';
 import 'models/weather.dart';
 import 'screens/classic.dart';
+import 'screens/improved.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,15 +58,15 @@ class _MyHomePageState extends State<MyHomePage>
           physics: const NeverScrollableScrollPhysics(),
           children: [
             const ClassicScreen(),
-            const ClassicScreen(),
+            ImprovedScreen.fromProvider(),
           ],
         ),
         bottomNavigationBar: TabBar(
           labelColor: Colors.black,
           controller: _tabController,
           tabs: [
-            Tab(child: Container(child: Icon(Icons.add), color: Colors.green)),
             Tab(child: Container(child: Icon(Icons.remove), color: Colors.red)),
+            Tab(child: Container(child: Icon(Icons.add), color: Colors.green)),
           ],
         ),
       ),

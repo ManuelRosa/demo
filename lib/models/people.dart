@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
@@ -28,9 +30,11 @@ class PeopleModel with ChangeNotifier {
     people = AsyncSnapshot.withData(ConnectionState.done, data);
   }
 
-  Future<void> addSomePerson() async => addPerson(
-        Person(name: Name(firstName: 'Someone', lastName: 'New')),
-      );
+  Future<void> addSomePerson() async => addPerson(Person(
+        name: Name(firstName: 'John Doe'),
+        age: Random().nextInt(100),
+        level: Random().nextBool() ? Level.senior : Level.newbie,
+      ));
 
   Future<void> addPerson(Person newPerson) async {
     people = people.inState(ConnectionState.waiting);
