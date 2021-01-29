@@ -42,7 +42,7 @@ class ClassicScreen extends StatelessWidget {
 
           if (!snapPeople.hasData) {
             // if there is nothing, show nothing...
-            return Container(color: Colors.grey);
+            return Placeholder(color: Colors.grey);
           }
 
           final people = snapPeople.data;
