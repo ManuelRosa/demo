@@ -10,7 +10,8 @@ import '../utils/test_data.dart';
 
 void main() {
   const snapNothing = AsyncSnapshot<List<Person>>.nothing();
-  const snapWaiting = AsyncSnapshot<List<Person>>.waiting();
+  const snapWaiting =
+      AsyncSnapshot<List<Person>>.withData(ConnectionState.waiting, <Person>[]);
   const snapError =
       AsyncSnapshot<List<Person>>.withError(ConnectionState.done, 'Error');
   const snapEmpty =
